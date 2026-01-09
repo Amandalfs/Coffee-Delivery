@@ -38,6 +38,11 @@
   --text-size-button-G: 14px;
   --text-size-button-M: 12px;
 
+  --font-title: var(--font-baloo);
+  --font-base: var(--font-roboto);
+
+  --leading-tight: 1.3;
+  --leading-base: 1.6;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);

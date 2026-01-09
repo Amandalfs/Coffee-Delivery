@@ -3,15 +3,18 @@ import { Baloo_2, Roboto } from "next/font/google";
 import "./globals.css";
 
 const baloo2 = Baloo_2({
-  variable: "--font-geist-sans",
+  variable: "--font-baloo",
   subsets: ["latin"],
-})
+  weight: ["700", "800"], 
+  display: 'swap',
+});
 
 const roboto = Roboto({
-    variable: "--font-geist-mono",
+  variable: "--font-roboto",
   subsets: ["latin"],
-})
-
+  weight: ["400", "700"], 
+  display: 'swap',
+});
 export const metadata: Metadata = {
   title: "Coffee Delivery",
   description: "Marketplace",
