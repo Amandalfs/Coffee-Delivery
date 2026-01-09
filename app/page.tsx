@@ -2,6 +2,7 @@ import { FormMethodPayment } from "@/components/FormMethodPayment/FormMethodPaym
 import TrashIcon from "@/components/Icons/TrashIcon";
 import { InputNumber } from "@/components/InputNumber/InputNumber";
 import { InputText } from "@/components/InputText/InputText";
+import { MyCartButton } from "@/components/MyCartButton/MyCartButton";
 import { PrimaryButton } from "@/components/PrimaryButton/PrimaryButton";
 import { PurchaseButton } from "@/components/PurchaseButton/PurchaseButton";
 import { SecondaryButton } from "@/components/SecondaryButton/SecondaryButton";
@@ -17,6 +18,7 @@ export default function Home() {
     <InputText placeholder="Email" isOptional={true} />
     <InputNumber />
     <FormMethodPayment />
+    <MyCartButton quantiy={3} />
    </div>
   );
 }
