@@ -2,12 +2,19 @@ import * as React from "react"
 import { SVGProps } from "react"
 
 const MinusIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" {...props}>
+  <svg
+    {...props}
+    width="1em"
+    height="1em"
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
     <path
-      fill="#574F4D"
       fillRule="evenodd"
-      d="M3.5 16A1.5 1.5 0 0 1 5 14.5h22a1.5 1.5 0 0 1 0 3H5A1.5 1.5 0 0 1 3.5 16Z"
       clipRule="evenodd"
+      d="M3.5 16C3.5 15.1716 4.17157 14.5 5 14.5H27C27.8284 14.5 28.5 15.1716 28.5 16C28.5 16.8284 27.8284 17.5 27 17.5H5C4.17157 17.5 3.5 16.8284 3.5 16Z"
+      fill={props.fill}
     />
   </svg>
 )

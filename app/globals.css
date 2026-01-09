@@ -12,7 +12,7 @@
   --color-product-purple-light: #EBE5F9;
   --color-product-purple-dark: #4B2995;
 
-  --color-base-tile: #272221;
+  --color-base-title: #272221;
   --color-base-subtitle: #403937;
   --color-base-text: #574F4D;
   --color-base-label: #8D8686;
@@ -37,6 +37,7 @@
   --text-size-tag: 10px;
   --text-size-button-G: 14px;
   --text-size-button-M: 12px;
+  --text-size-button-S: 12px;
 
   --font-title: var(--font-baloo);
   --font-base: var(--font-roboto);
