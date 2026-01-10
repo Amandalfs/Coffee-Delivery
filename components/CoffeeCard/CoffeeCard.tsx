@@ -7,8 +7,8 @@ import coffeeImg from "../../assets/imgs/Coffee-Test.svg";
 export function CoffeeCard(){
     return <div className="
         flex flex-col items-center text-center
-        py-5 
-        px-5
+        my-5 
+        mx-5
     ">
         <Image className="pb-3" src={coffeeImg} height={120} width={120} alt="coffee" />
         <div className="flex justify-center pb-4">
@@ -34,8 +34,10 @@ export function CoffeeCard(){
             >
                 R$ <span className="font-title font-extrabold text-size-title-M leading-tight">9,90</span>
             </p>
-            <InputNumber />
-            <PurchaseButton/>
+            <div className="flex gap-2 items-center justify-center">
+                <InputNumber />
+                <PurchaseButton/>
+            </div>
         </div>
     </div>
 }
