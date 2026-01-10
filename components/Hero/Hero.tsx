@@ -6,7 +6,7 @@ import PackageIcon from "../Icons/PackageIcon";
 import CoffeeIcon from "../Icons/CoffeeIcon";
 
 export function Hero(){
-    return <section className="w-full flex items-center justify-center gap-4 mb-4">
+    return <section className="w-full flex items-center justify-center gap-4 py-20">
         <div className="flex flex-col gap-16">
             <div className="flex flex-col gap-4">
                 <h1 className="
