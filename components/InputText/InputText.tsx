@@ -1,5 +1,6 @@
 import { InputHTMLAttributes } from "react";
 import { Input } from "../ui/input";
+import clsx from "clsx";
 
 interface InputTextProps extends InputHTMLAttributes<HTMLInputElement> {
     isOptional?: boolean    
@@ -10,7 +11,7 @@ export function InputText({isOptional, ...rest}: InputTextProps) {
     <div className="relative w-96 group">
       <Input
         {...rest}
-        className="
+        className={clsx(`
           bg-base-input border-base-button border-2 
           placeholder:text-base-label
           placeholder:text-size-text-S 
@@ -28,7 +29,7 @@ export function InputText({isOptional, ...rest}: InputTextProps) {
           text-size-text-S
           font-normal
           font-base
-          "
+          `, rest.className)}
       />
       
       {isOptional && <span 
