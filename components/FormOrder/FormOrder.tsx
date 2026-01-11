@@ -4,9 +4,9 @@ import MapPinLineIcon from "../Icons/MapPinLineIcon";
 import { InputText } from "../InputText/InputText";
 
 export function FormOrder() {
-    return <div className="flex flex-col gap-3 w-140">
+    return <div className="flex flex-col gap-3 w-160 ">
         <h1 className="text-base-subtitle font-title font-bold leading-tight text-size-title-XS">Complete seu pedido</h1>
-        <div className="flex flex-col mx-10 my-10 gap-8 w-full ">
+        <div className="flex flex-col m-10 gap-8">
             <div className="flex gap-2">
                 <MapPinLineIcon className="size-6 fill-product-yellow-dark" />
                 <div className="flex flex-col gap-0.5">
@@ -28,7 +28,7 @@ export function FormOrder() {
                 </div>
             </form>
         </div>
-        <div className="flex flex-col mx-10 my-10 gap-8 w-full">
+        <div className="flex flex-col mx-10  gap-8">
             <div className="flex gap-2">
                 <CurrrentIcon className="size-6 fill-product-purple" />
                 <div className="flex flex-col gap-0.5">
