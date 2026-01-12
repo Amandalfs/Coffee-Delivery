@@ -1,10 +1,18 @@
+"use client"
 import Image from "next/image";
 import { Tag } from "../Tag/Tag";
 import { InputNumber } from "../InputNumber/InputNumber";
 import { PurchaseButton } from "../PurchaseButton/PurchaseButton";
 import coffeeImg from "../../assets/imgs/Coffee-Test.svg";
+import { useState } from "react";
 
 export function CoffeeCard(){
+    const [quantity, setQuantity] = useState(1);
+
+    function handleQuantityChange(newQuantity: number){
+        setQuantity(newQuantity);
+    }
+
     return <div className="
         flex flex-col items-center text-center
         my-5 
@@ -35,7 +43,7 @@ export function CoffeeCard(){
                 R$ <span className="font-title font-extrabold text-size-title-M leading-tight">9,90</span>
             </p>
             <div className="flex gap-2 items-center justify-center">
-                <InputNumber />
+                <InputNumber onChangeValue={handleQuantityChange} value={quantity} />
                 <PurchaseButton/>
             </div>
         </div>
