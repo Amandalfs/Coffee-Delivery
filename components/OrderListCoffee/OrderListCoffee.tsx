@@ -1,15 +1,26 @@
+"use client";
+import { useCartStore } from "@/store/useCartStore";
 import { CartItemCoffee } from "../CartItemCoffee/CartItemCoffee";
 import { PrimaryButton } from "../PrimaryButton/PrimaryButton";
+import { useHasMounted } from "@/hooks/useHasMounted";
 
 export function OrderListCoffee() {
+    const items = useCartStore((state) => state.listCartItems());
+    const hasMounted = useHasMounted()
+
     return <div className="flex flex-col gap-3 w-full">
         <h1 className="text-base-subtitle font-title font-bold leading-tight text-size-title-XS">Cafés selecionados seu pedido</h1>
         <div className="flex flex-col m-10">
                 {/* lista de cafés */}
             <div>
-                {[1, 2, 3].map(() => (
-                    <div key={Math.random()}>
-                        <CartItemCoffee />
+                {hasMounted && items.map(({ id, name, image, price, quantity }) => (
+                    <div key={id}>
+                        <CartItemCoffee 
+                            name={name}
+                            image={image}
+                            price={price}
+                            quantity={quantity}
+                        />
                     </div>
                 ))}
             </div>
