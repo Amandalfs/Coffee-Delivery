@@ -8,6 +8,7 @@ export function OrderListCoffee() {
     const items = useCartStore((state) => state.listCartItems());
     const updateQuantity = useCartStore((state) => state.updateQuantity);
     const removeFromCart = useCartStore((state) => state.removeFromCart);
+    const totalPrice = useCartStore((state) => state.totalPrice());
     const hasMounted = useHasMounted()
 
     return <div className="flex flex-col gap-3 w-full">
@@ -37,7 +38,11 @@ export function OrderListCoffee() {
                 <div className="flex flex-col gap-3 mb-6">
                     <div className="flex justify-between">
                         <p className="text-size-text-S text-base-text leading-tight font-medium font-base">Total de itens</p>
-                        <p className="text-size-text-M text-base-text leading-tight font-medium font-base">R$ 29,70</p>
+                        <p className="text-size-text-M text-base-text leading-tight font-medium font-base">
+                            R$ {
+                                hasMounted ? totalPrice.toFixed(2) : '0,00'
+                            }
+                        </p>
                     </div>
                     <div className="flex justify-between">
                         <p className="text-size-text-S text-base-text leading-tight font-medium font-base">Entrega</p>
@@ -47,7 +52,11 @@ export function OrderListCoffee() {
                 <div className="flex justify-between mb-8">
                     <div className="flex justify-between w-full">
                         <p className="text-size-large text-base-subtitle font-base font-bold leading-tight text-size-text-L">Total</p>
-                        <p className="text-size-large text-base-subtitle font-base font-bold leading-tight text-size-text-L">R$ 33,20</p>
+                        <p className="text-size-large text-base-subtitle font-base font-bold leading-tight text-size-text-L">
+                            R$ {
+                                hasMounted ? (totalPrice + 3.5).toFixed(2) : '0,00'
+                            }
+                        </p>
                     </div>
                 </div>
                 <PrimaryButton>
