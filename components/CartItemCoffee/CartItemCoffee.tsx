@@ -8,9 +8,11 @@ interface CartItemCoffeeProps {
   image: string;
   price: number;
   quantity: number;
+  onChangeQuantity: (value: number) => void;
+  removeItem: () => void;
 }
 
-export function CartItemCoffee({ name, image, price, quantity }: CartItemCoffeeProps) {
+export function CartItemCoffee({ name, image, price, quantity, onChangeQuantity, removeItem }: CartItemCoffeeProps) {
   return (
     <div className="flex flex-wrap items-start justify-between gap-4 py-2 px-2 rounded-md mb-4 ">
       
@@ -23,8 +25,10 @@ export function CartItemCoffee({ name, image, price, quantity }: CartItemCoffeeP
           </h1>
           
           <div className="flex flex-wrap gap-2">
-            <InputNumber value={quantity} onChangeValue={()=> {}} />
-            <SecondaryButton className="px-3 py-2 min-w-fit" />
+            <InputNumber value={quantity} onChangeValue={onChangeQuantity} />
+            <SecondaryButton className="px-3 py-2 min-w-fit" 
+              onClick={removeItem}
+            />
           </div>
         </div>
       </div>

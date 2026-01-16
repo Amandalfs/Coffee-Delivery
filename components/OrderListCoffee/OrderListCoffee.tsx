@@ -6,6 +6,8 @@ import { useHasMounted } from "@/hooks/useHasMounted";
 
 export function OrderListCoffee() {
     const items = useCartStore((state) => state.listCartItems());
+    const updateQuantity = useCartStore((state) => state.updateQuantity);
+    const removeFromCart = useCartStore((state) => state.removeFromCart);
     const hasMounted = useHasMounted()
 
     return <div className="flex flex-col gap-3 w-full">
@@ -20,6 +22,12 @@ export function OrderListCoffee() {
                             image={image}
                             price={price}
                             quantity={quantity}
+                            onChangeQuantity={(value: number) => {
+                                updateQuantity(id, value)
+                            }}
+                            removeItem={() => {
+                                removeFromCart(id)
+                            }}
                         />
                     </div>
                 ))}

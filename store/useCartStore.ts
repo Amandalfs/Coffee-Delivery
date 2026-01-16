@@ -19,7 +19,7 @@ interface CartState {
   cart: CartItem[];
   addToCart: (product: Product, quantity: number) => void;
   removeFromCart: (productId: string) => void;
-  updateQuantity: (productId: string, action: 'increase' | 'decrease') => void;
+  updateQuantity: (productId: string, value: number) => void;
   listCartItems: () => CartItem[];
   clearCart: () => void;
   totalPrice: () => number;
@@ -55,13 +55,12 @@ export const useCartStore = create<CartState>()(
         }));
       },
 
-      updateQuantity: (productId, action) => {
+      updateQuantity: (productId, value) => {
         const { cart } = get();
         set({
           cart: cart.map((item) => {
             if (item.id === productId) {
-              const newQuantity = action === 'increase' ? item.quantity + 1 : item.quantity - 1;
-              return { ...item, quantity: Math.max(1, newQuantity) }; // Evita quantidade menor que 1
+              return { ...item, quantity: Math.max(1, value) };
             }
             return item;
           }),
