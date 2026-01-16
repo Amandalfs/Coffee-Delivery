@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Tag } from "../Tag/Tag";
 import { InputNumber } from "../InputNumber/InputNumber";
 import { PurchaseButton } from "../PurchaseButton/PurchaseButton";
+import { useCartStore } from '@/store/useCartStore';
 import { useState } from "react";
 
 interface CoffeeCardProps {
@@ -14,6 +15,7 @@ interface CoffeeCardProps {
 }
 
 export function CoffeeCard({ name, description, image, price, tags }: CoffeeCardProps){
+    const addToCart = useCartStore((state) => state.addToCart);
     const [quantity, setQuantity] = useState(1);
 
     function handleQuantityChange(newQuantity: number){
@@ -57,7 +59,9 @@ export function CoffeeCard({ name, description, image, price, tags }: CoffeeCard
             </p>
             <div className="flex gap-2 items-center justify-center">
                 <InputNumber onChangeValue={handleQuantityChange} value={quantity} />
-                <PurchaseButton/>
+                <PurchaseButton 
+                    onClick={() => addToCart({ id: name, name, price, image  }, quantity)}
+                />
             </div>
         </div>
     </div>
