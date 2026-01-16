@@ -60,7 +60,9 @@ export function CoffeeCard({ name, description, image, price, tags }: CoffeeCard
             <div className="flex gap-2 items-center justify-center">
                 <InputNumber onChangeValue={handleQuantityChange} value={quantity} />
                 <PurchaseButton 
-                    onClick={() => addToCart({ id: name, name, price, image  }, quantity)}
+                    onClick={() => {
+                        addToCart({ id: name, name, price, image  }, quantity)
+                    }}
                 />
             </div>
         </div>

@@ -45,7 +45,7 @@ export const useCartStore = create<CartState>()(
             ),
           });
         } else {
-          set({ cart: [...cart, { ...product, quantity: 1 }] });
+          set({ cart: [...cart, { ...product, quantity }] });
         }
       },
 

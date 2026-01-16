@@ -35,7 +35,7 @@ export function CartItemCoffee({ name, image, price, quantity, onChangeQuantity,
 
 
       <p className="text-size-text-M text-base-text leading-tight font-bold font-base  whitespace-nowrap">
-        R$ {(price * quantity).toFixed(2)}
+        R$ {(price * quantity).toFixed(2).replaceAll(".", ",")}
       </p>
     </div>
   );

@@ -40,7 +40,7 @@ export function OrderListCoffee() {
                         <p className="text-size-text-S text-base-text leading-tight font-medium font-base">Total de itens</p>
                         <p className="text-size-text-M text-base-text leading-tight font-medium font-base">
                             R$ {
-                                hasMounted ? totalPrice.toFixed(2) : '0,00'
+                                hasMounted ? totalPrice.toFixed(2).replaceAll(".", ",")  : '0,00'
                             }
                         </p>
                     </div>
@@ -54,7 +54,7 @@ export function OrderListCoffee() {
                         <p className="text-size-large text-base-subtitle font-base font-bold leading-tight text-size-text-L">Total</p>
                         <p className="text-size-large text-base-subtitle font-base font-bold leading-tight text-size-text-L">
                             R$ {
-                                hasMounted ? (totalPrice + 3.5).toFixed(2) : '0,00'
+                                hasMounted ? (totalPrice + 3.5).toFixed(2).replaceAll(".", ",") : '0,00'
                             }
                         </p>
                     </div>
