@@ -22,3 +22,10 @@ export async function GET(_: unknown): Promise<NextResponse<Coffees | ErrorRespo
     return NextResponse.json({ error: 'Failed to load data' }, { status: 500 });
   }
 }
+
+export async function getCoffeesData() {
+  const filePath = path.resolve(process.cwd(), 'app/database/database.json');
+  const data = await fs.readFile(filePath, 'utf8');
+  const fileDatabase = JSON.parse(data);
+  return { coffees: fileDatabase.Coffees };
+}
