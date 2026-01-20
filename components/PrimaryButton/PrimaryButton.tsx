@@ -1,9 +1,7 @@
 import React, { ButtonHTMLAttributes, ReactNode } from 'react';
 import { Button } from "../ui/button";
 
-interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    children: ReactNode; 
-}
+interface PrimaryButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
 
 export function PrimaryButton({children, ...rest}: PrimaryButtonProps){
     return (<Button

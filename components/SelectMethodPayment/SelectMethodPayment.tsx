@@ -6,7 +6,8 @@ import clsx from 'clsx';
 interface SelectProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     iconImg?: string;
     isSelected?: boolean;
-    children: ReactNode; 
+    children: ReactNode;
+    onClick?: () => void;
 }
 
 const baseSelect = `
@@ -22,8 +23,10 @@ const baseSelect = `
         uppercase
     `
 
-export function SelectMethodPayment({children, isSelected }: SelectProps){
-    return (<Button className={clsx(baseSelect, isSelected ? "border-2 border-product-purple " : "")}
+export function SelectMethodPayment({children, isSelected, onClick }: SelectProps){
+    return (<Button 
+        className={clsx(baseSelect, isSelected ? "border-2 border-product-purple " : "")}
+        onClick={onClick}
         >
         {children}
     </Button>)

@@ -59,7 +59,10 @@ export function OrderListCoffee() {
                         </p>
                     </div>
                 </div>
-                <PrimaryButton>
+                <PrimaryButton 
+                    type="submit"
+                    form="checkout-form"
+                >
                     CONFIRMAR PEDIDO
                 </PrimaryButton>
             </div>
